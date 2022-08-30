@@ -12,6 +12,7 @@ const Container = styled.div`
   border-radius: 7.42311px;
   display: flex;
   justify-content: ${(props) => (props.blur ? "space-between" : "center")};
+  z-index: 1;
   @supports (
     (-webkit-backdrop-filter: blur(29.6924px)) or
       (backdrop-filter: blur(29.6924px))
@@ -22,7 +23,6 @@ const Container = styled.div`
     -webkit-backdrop-filter: ${(props) => props.blur && "blur(29.6924px)"};
     background: rgba(255, 255, 255, 0.1);
   }
-
   &::before {
     content: "";
     position: absolute;
@@ -40,10 +40,32 @@ const Container = styled.div`
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
-  z-index: 1;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    max-height: 80px;
+  }
+  @media (max-width: 600px) {
+    max-height: ${(props) => props.trending && "100px"};
+  }
+  @media (max-width: 500px) {
+    flex-direction: ${(props) => props.trending && "column"};
+    align-items: ${(props) => props.trending && "center"};
+    gap: 20px;
+  }
 `;
 
-const Rectangle = ({ children, width, height, top, bottom, blur }) => {
+const Rectangle = ({
+  children,
+  width,
+  height,
+  top,
+  bottom,
+  blur,
+  trending,
+}) => {
   return (
     <Container
       width={width}
@@ -51,6 +73,7 @@ const Rectangle = ({ children, width, height, top, bottom, blur }) => {
       top={top}
       bottom={bottom}
       blur={blur}
+      trending={trending}
     >
       {children}
     </Container>

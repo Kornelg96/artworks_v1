@@ -21,16 +21,9 @@ const Container = styled.div`
     align-items: center;
     height: 100%;
     width: 100%;
-    gap: 90px;
   }
   @media (max-width: 700px) {
     width: 85vw;
-  }
-  @media (max-width: 550px) {
-    gap: 120px;
-  }
-  @media (max-width: 440px) {
-    gap: 220px;
   }
 `;
 const Left = styled.div`
@@ -40,7 +33,7 @@ const Left = styled.div`
   margin-top: 12.34px;
   @media (max-width: 700px) {
     width: 100%;
-    
+    height: auto;
   }
 `;
 const Right = styled.div`
@@ -49,6 +42,7 @@ const Right = styled.div`
   position: relative;
   @media (max-width: 700px) {
     width: 100%;
+    height: 100%;
   }
 `;
 const Title = styled.h1`
@@ -65,6 +59,11 @@ const Title = styled.h1`
   @media (max-width: 700px) {
     width: 100%;
     text-align: center;
+    margin-bottom: 0;
+    height: auto;
+  }
+  @media (max-width: 700px) {
+    font-size: 35px;
   }
 `;
 const SubTitle = styled.p`
@@ -80,7 +79,8 @@ const SubTitle = styled.p`
   @media (max-width: 700px) {
     width: 100%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 0;
+    height: auto;
   }
 `;
 const Buttons = styled.div`
@@ -105,6 +105,12 @@ const Images = styled.div`
     justify-content: center;
     align-items: center;
   }
+  @media (max-width: 700px) {
+    height: auto;
+  }
+  @media (max-width: 350px) {
+    gap: 20px;
+  }
 `;
 
 const Image = styled.img`
@@ -117,9 +123,9 @@ const Image = styled.img`
   right: ${(props) => (props.right ? props.right : "auto")};
   left: ${(props) => props.left && props.left};
   z-index: ${(props) => (props.z ? props.z : "1")};
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     width: 100%;
-    margin-top: 50px;
+    position: relative;
   }
 `;
 
@@ -127,6 +133,13 @@ const Image2 = styled.img`
   width: ${(props) => (props.width ? props.width : "auto")};
   height: ${(props) => (props.height ? props.height : "auto")};
   @media (max-width: 700px) {
+    &:last-child {
+      display: none;
+    }
+  }
+  @media (max-width: 500px) {
+    width: 40%;
+    height: auto;
   }
 `;
 
@@ -142,12 +155,14 @@ const Gradient = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline;
+  @media (max-width: 700px) {
+    font-size: 35px;
+  }
 `;
 const Test = styled.div`
   @media (max-width: 700px) {
     position: relative;
-    width: 400px;
-    margin: 0 auto;
+    width: 100%;
   }
 `;
 const Main = () => {
@@ -184,23 +199,13 @@ const Main = () => {
           <Image src={group} />
         </Images>
         <Test>
-          {resize ? (
-            <Rectangle blur bottom="29.11px">
-              <Images second="true">
-                <Image2 src={img} width="100px" height="34.63px" />
-                <Image2 src={img3} width=" 100px" height=" 34.63px" />
-                <Image2 src={img2} width="100px" height="27.2px" />
-              </Images>
-            </Rectangle>
-          ) : (
-            <Rectangle blur bottom="29.11px" width="658.43px" height="124.71px">
-              <Images second="true">
-                <Image2 src={img} width="188.03px" height="34.63px" />
-                <Image2 src={img3} width=" 173.14px" height=" 34.63px" />
-                <Image2 src={img2} width="152.28px" height="27.2px" />
-              </Images>
-            </Rectangle>
-          )}
+          <Rectangle blur bottom="29.11px" width="658.43px" height="124.71px">
+            <Images second="true">
+              <Image2 src={img} width="188.03px" height="34.63px" />
+              <Image2 src={img3} width=" 173.14px" height=" 34.63px" />
+              <Image2 src={img2} width="152.28px" height="27.2px" />
+            </Images>
+          </Rectangle>
         </Test>
       </Right>
     </Container>
