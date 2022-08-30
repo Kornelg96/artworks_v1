@@ -102,6 +102,7 @@ const Input = styled.input`
   line-height: 23px;
   letter-spacing: 0;
   color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
   @media (max-width: 500px) {
     width: 80%;
   }

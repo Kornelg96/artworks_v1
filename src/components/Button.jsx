@@ -31,10 +31,9 @@ const MyButton = styled.button`
     position: absolute;
     inset: 0;
     border-radius: 30px;
-    border: 3px solid transparent;
-    background: linear-gradient(97.86deg, #89c6ff -38.38%, #3633d0 71.88%)
-      border-box;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+    padding: 3px;
+    background: linear-gradient(97.86deg, #89c6ff -38.38%, #3633d0 71.88%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;

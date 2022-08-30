@@ -101,7 +101,7 @@ const Images = styled.div`
   gap: 35.63px;
   @media (max-width: 1300px) {
     width: 100%;
-    margin: 0;
+    margin: 20px 0;
     justify-content: center;
     align-items: center;
   }
