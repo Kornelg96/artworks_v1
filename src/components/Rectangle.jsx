@@ -34,12 +34,14 @@ const Container = styled.div`
         rgba(6, 19, 45, 0) 0.92%,
         #ffffff 100%
       ),
-      linear-gradient(93.17deg, #ffffff 0.92%, #06132d 100%) border-box;
-    -webkit-mask: /*4*/ linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0);
+      linear-gradient(93.17deg, #ffffff 0.92%, #06132d 100%);
+      -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
+  
   @media (max-width: 1300px) {
     width: ${(props) => props.footer && "100%"};
   }
