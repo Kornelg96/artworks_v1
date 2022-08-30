@@ -40,15 +40,17 @@ const Container = styled.div`
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
+  @media (max-width: 1300px) {
+    width: ${(props) => props.footer && "100%"};
+  }
 
   @media (max-width: 700px) {
     width: 100%;
   }
   @media (max-width: 600px) {
     max-height: 80px;
-  }
-  @media (max-width: 600px) {
     max-height: ${(props) => props.trending && "100px"};
+    max-height: ${(props) => props.footer && "500px"};
   }
   @media (max-width: 500px) {
     flex-direction: ${(props) => props.trending && "column"};
@@ -65,6 +67,7 @@ const Rectangle = ({
   bottom,
   blur,
   trending,
+  footer,
 }) => {
   return (
     <Container
@@ -74,6 +77,7 @@ const Rectangle = ({
       bottom={bottom}
       blur={blur}
       trending={trending}
+      footer={footer}
     >
       {children}
     </Container>

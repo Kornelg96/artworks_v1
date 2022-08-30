@@ -11,6 +11,10 @@ const Container = styled.div`
   font-family: "Poppins";
   font-style: normal;
   letter-spacing: 0.005em;
+  @media (max-width: 1300px) {
+    width: 95%;
+    height: auto;
+  }
 `;
 const Top = styled.div``;
 const Bottom = styled.div`
@@ -27,6 +31,12 @@ const Newsletter = styled.div`
   width: 685px;
   height: 198.79px;
   margin-top: 96px;
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
+  @media (max-width: 700px) {
+    margin-top: 76px;
+  }
 `;
 const NewsletterTop = styled.div`
   width: 590px;
@@ -36,22 +46,48 @@ const NewsletterTop = styled.div`
   align-items: center;
   margin: 0 auto;
   margin-bottom: 60px;
+  @media (max-width: 700px) {
+    height: auto;
+    width: 100%;
+    padding: 0 20px;
+  }
+  @media (max-width: 500px) {
+    margin-bottom: 30px;
+  }
 `;
+
 const NewsletterTitle = styled.h1`
   font-weight: 600;
   font-size: 40.4352px;
   line-height: 52px;
+  @media (max-width: 700px) {
+    font-size: 30px;
+    text-align: center;
+  }
 `;
 const NewsletterText = styled.p`
   font-weight: 400;
   font-size: 13.7063px;
   line-height: 18px;
+  @media (max-width: 700px) {
+    text-align: center;
+  }
 `;
 const NewsletterBottom = styled.div`
   width: 685px;
   height: 55px;
   display: flex;
   gap: 19px;
+  @media (max-width: 1300px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 120px;
+  }
 `;
 const Input = styled.input`
   width: 480px;
@@ -66,12 +102,18 @@ const Input = styled.input`
   line-height: 23px;
   letter-spacing: 0;
   color: rgba(255, 255, 255, 0.5);
+  @media (max-width: 500px) {
+    width: 80%;
+  }
+  @media (max-width: 350px) {
+    font-size: 15px;
+  }
 `;
 const Footer = () => {
   return (
     <Container>
       <Top>
-        <Rectangle width="1279px" height="390.79px" top="0">
+        <Rectangle footer width="1279px" height="390.79px" top="0">
           <Newsletter>
             <NewsletterTop>
               <NewsletterTitle>Never miss a drop!</NewsletterTitle>
