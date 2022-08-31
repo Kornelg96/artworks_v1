@@ -25,6 +25,9 @@ const MyButton = styled.button`
   z-index: 99;
   cursor: pointer;
   position: relative;
+  @media (max-width:550px) {
+    display: ${(props) => (props.mobile && "none")};
+  }
 
   &::before {
     content: "";
@@ -40,7 +43,7 @@ const MyButton = styled.button`
   }
 `;
 
-const Button = ({ children, width, height, secondary, onClick, border }) => {
+const Button = ({ children, width, height, secondary, onClick, border,mobile }) => {
   return (
     <>
       <MyButton
@@ -48,6 +51,7 @@ const Button = ({ children, width, height, secondary, onClick, border }) => {
         height={height}
         secondary={secondary}
         onClick={onClick}
+        mobile={mobile}
       >
         {children}
       </MyButton>

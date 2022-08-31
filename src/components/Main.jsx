@@ -22,6 +22,9 @@ const Container = styled.div`
     height: 100%;
     width: 100%;
   }
+  @media (max-width: 1000px) {
+    margin-top: 120px;
+  }
   @media (max-width: 700px) {
     width: 85vw;
   }

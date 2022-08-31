@@ -65,6 +65,7 @@ const Price = styled.div`
   background-clip: text;
 `;
 
+
 const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;

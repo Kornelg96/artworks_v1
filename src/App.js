@@ -7,6 +7,7 @@ import Main from './components/Main';
 import Trending from './components/Trending';
 import TopList from './components/TopList';
 import Footer from './components/Footer';
+import { useState,useEffect } from 'react';
 
 
 const Container = styled.div`
@@ -15,8 +16,22 @@ background-color: black;
 overflow: hidden;
 z-index: 9;
 `
-
+let isMobile = window.innerWidth < 1301 ? true : false;
+let isMobileNav = window.innerWidth < 1001 ? true : false;
 function App() {
+  const [width, setWidth] = useState(window.innerWidth);
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+    isMobile = window.innerWidth < 1301 ? true : false;
+    isMobileNav = window.innerWidth < 1001 ? true : false;
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
   return (
     <>
     <Container>
@@ -27,7 +42,7 @@ function App() {
       <Circular left="1383px" top="3510px" width="2866px" height="2866px" opacity="0.3"/>
       <Circular left="0" top="3832px" width="2866px" height="2866px" opacity="0.4"/>
       <Circular left="1187px" top="1844px" width="2866px" height="2358px" opacity="0.5"/>
-      <NavBar/>
+      <NavBar isMobileNav={isMobileNav}/>
       <Main/>
       <Trending/>
       <TopList/>
