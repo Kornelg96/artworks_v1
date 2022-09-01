@@ -19,7 +19,7 @@ const Circle = styled.div`
   opacity: ${(props) => (props.opacity ? props.opacity : "0.5")};
   width: ${(props) => props.width && props.width};
   height: ${(props) => props.height && props.height};
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const Circular = ({ left, top, width, height, opacity }) => {

@@ -4,6 +4,9 @@ import TopListItem from "./TopListItem";
 
 const Container = styled.div`
   overflow: hidden;
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
 `;
 
 const WrapperList = styled.div`
@@ -13,6 +16,11 @@ const WrapperList = styled.div`
   gap: 20px;
   transform: translateX(${(props) => props.slide * -1300}px);
   transition: all 1.5s ease;
+  @media (max-width: 1300px) {
+    width: 100%;
+    transform: translateX(${(props) => props.slide * -100}%);
+    gap: 0;
+  }
 `;
 const Rectangles = styled.div`
   display: flex;

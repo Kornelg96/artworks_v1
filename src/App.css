@@ -30,13 +30,10 @@ time, mark, audio, video {
 
 html{
 	color: white;
-	/* background: black; */
-	overflow-x: hidden;
 	max-height: 3300px;
 }
 #root{
 	color: white;
-	overflow-x: hidden;
 	max-height: 3300px;
 }
 body{

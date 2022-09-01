@@ -13,6 +13,9 @@ const Wrapper = styled.div`
   height: 642.54px;
   margin: 0 auto;
   margin-top: 137.57px;
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
 `;
 const Title = styled.h1`
   width: 100%;
@@ -22,11 +25,13 @@ const Title = styled.h1`
   font-weight: 600;
   font-size: 59.0024px;
   line-height: 76px;
-  /* identical to box height */
   text-align: center;
 
   letter-spacing: 0.005em;
   margin-bottom: 32px;
+  @media (max-width:550px){
+    height: auto;
+  }
 `;
 const Tabs = styled.div`
   width: 288px;
@@ -35,10 +40,15 @@ const Tabs = styled.div`
   display: flex;
   gap: 21px;
 `;
-const Tab = styled.div``;
 const SliderContaier = styled.div`
   margin: 0 auto;
   margin-top: 60px;
+  @media (max-width: 1300px) {
+    margin: 60px 40px;
+  }
+  @media (max-width:550px){
+    margin: 60px 15px;
+  }
 `;
 const TopList = () => {
   const [active, setActive] = useState("firstButton");

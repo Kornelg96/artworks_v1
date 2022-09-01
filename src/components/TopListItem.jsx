@@ -9,6 +9,44 @@ const Container = styled.div`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
+  @media (max-width: 1300px) {
+    min-width: calc((100% / 4) - (60px / 4));
+    margin-right: 20px;
+    &:nth-child(4n) {
+      margin-right: 10px;
+    }
+  }
+  @media (max-width: 1000px) {
+    min-width: calc((100% / 3) - (40px / 3));
+    &:nth-child(4n) {
+      margin-right: 20px;
+    }
+    &:nth-child(3n) {
+      margin-right: 10px;
+    }
+  }
+  @media (max-width: 650px) {
+    min-width: calc((100% / 2) - (20px / 2));
+    &:nth-child(3n) {
+      margin-right: 20px;
+    }
+    &:nth-child(2n) {
+      margin-right: 0px;
+    }
+    overflow: hidden;
+  }
+  @media (max-width: 550px) {
+    height: 300px;
+  }
+  @media (max-width: 650px) {
+    min-width: calc((100% / 2) - (20px / 2));
+    &:nth-child(3n) {
+      margin-right: 20px;
+    }
+    &:nth-child(2n) {
+      margin-right: 0px;
+    }
+  }
 `;
 const Button = styled.button`
   border-radius: 12px;
@@ -29,6 +67,12 @@ const Button = styled.button`
     props.followed === "Follow" ? "none" : "1px solid white"};
   color: #ffffff;
   cursor: pointer;
+  @media (max-width: 1300px) {
+    width: 85%;
+  }
+  @media (max-width: 550px) {
+    padding: 16px 16px;
+  }
 `;
 const Information = styled.div`
   height: 62px;
@@ -53,20 +97,35 @@ const Followers = styled.p`
   font-size: 20.0548px;
   line-height: 24px;
 `;
+const ImageContainer = styled.div`
+  @media (max-width: 1300px) {
+    height: 164px;
+  }
+`;
 
 const Image = styled.img`
   position: ${(props) => props.profile && "absolute"};
   bottom: ${(props) => props.profile && "176.52px"};
   width: ${(props) => props.profile && "56.40px"};
   height: ${(props) => props.profile && "56.40px"};
+  @media (max-width: 1300px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: ${(props) => props.profile && "absolute"};
+    bottom: ${(props) => props.profile && "176.52px"};
+    width: ${(props) => props.profile && "56.40px"};
+    height: ${(props) => props.profile && "56.40px"};
+    object-fit: cover;
+  }
 `;
 
 const Union = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  mask-image: url("/img/Union.svg");
-  -webkit-mask-image: url("/img/Union.png");
+  mask-image: url("/img/Unionpngx4.png");
+  -webkit-mask-image: url("/img/Unionpngx4.png");
   -webkit-mask-repeat: no-repeat;
   mask-size: 305px, 164px;
   z-index: 999999;
@@ -76,6 +135,15 @@ const Union = styled.div`
   backdrop-filter: blur(20px);
   display: flex;
   justify-content: center;
+  @media (max-width: 1300px) {
+    mask-size: cover;
+    width: 100%;
+    mask-position: center;
+    border-radius: 20px;
+  }
+  @media (max-width: 550px) {
+    bottom: -30px;
+  }
 `;
 const ButtonWrapper = styled.div`
   position: absolute;
@@ -83,6 +151,9 @@ const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  @media (max-width: 550px) {
+    bottom: 40px;
+  }
 `;
 const FollowersSmaller = styled.p`
   font-family: "Poppins";
@@ -119,7 +190,9 @@ const TopListItem = ({
   };
   return (
     <Container>
-      <Image src={imgHero} />
+      <ImageContainer>
+        <Image src={imgHero} />
+      </ImageContainer>
       <Union>
         <Image src={imgProfile} profile />
         <Information>
