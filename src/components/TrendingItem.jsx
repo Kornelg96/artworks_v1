@@ -65,7 +65,6 @@ const Price = styled.div`
   background-clip: text;
 `;
 
-
 const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -99,14 +98,14 @@ const TrendingItem = ({ img, author, instagram, price }) => {
         <Image src={img} />
       </ImageContainer>
       {isMobile ? (
-        <Rectangle blur trending bottom="55px" width="105%" height="105px">
+        <Rectangle blur trending bottom="55px" width="100%" height="105px">
           <Information>
             <Author>{author}</Author>
             <Instagram>{instagram}</Instagram>
             <Price>{price}</Price>
           </Information>
           <ButtonWrapper>
-            <Button width="152px" height="39px">
+            <Button width="142px" height="39px">
               Collect Now
             </Button>
           </ButtonWrapper>
